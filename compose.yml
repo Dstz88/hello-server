@@ -1,0 +1,14 @@
+services:
+  hello-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    image: dhesta/hello-server:latest
+
+    container_name: hello-server
+
+    ports:
+      - "8082:80"
+
+    restart: unless-stopped
