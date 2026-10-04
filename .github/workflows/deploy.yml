@@ -1,0 +1,19 @@
+name: Deploy to Dhesta Homelab
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on:
+      - self-hosted
+      - Linux
+      - X64
+
+    steps:
+      - name: Deploy hello-server
+        run: |
+          cd /home/dhesta/homelab/projects/hello-server
+          ./deploy.sh
